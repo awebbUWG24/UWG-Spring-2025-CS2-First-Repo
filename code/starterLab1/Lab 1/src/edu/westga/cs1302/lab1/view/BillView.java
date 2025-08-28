@@ -10,6 +10,8 @@ import edu.westga.cs1302.lab1.model.Bill;
  */
 public class BillView {
 	
+	private static final double BILL_TAX = 0.1;
+	private static final double BILL_TIP = 0.2;
 	private Bill itemList = new Bill();
 	
 	/** Return a String containing the list of bill items and total for the bill.
@@ -29,8 +31,8 @@ public class BillView {
 		
 		text += System.lineSeparator();
 		text += "SUBTOTAL - $" + subTotal + System.lineSeparator();
-		double tax = subTotal * 0.1;
-		double tip = subTotal * 0.2;
+		double tax = subTotal * BILL_TAX;
+		double tip = subTotal * BILL_TIP;
 		text += "TAX - $" + tax + System.lineSeparator();
 		text += "TIP - $" + tip + System.lineSeparator();
 		text += "TOTAL - $" + (subTotal + tip + tax);

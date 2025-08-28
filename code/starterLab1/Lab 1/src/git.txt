@@ -4,3 +4,8 @@ Poor Seperation Of Concerns
 2) Added the BillView class
 3) Moved and refactored the getText()
 method to work inside the BillView class
+
+Magic Numbers
+
+1) Replaced tax and tip values in
+getText() with static, final variables
