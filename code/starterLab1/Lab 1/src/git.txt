@@ -1,0 +1,6 @@
+Poor Seperation Of Concerns
+
+1) Created a new view package
+2) Added the BillView class
+3) Moved and refactored the getText()
+method to work inside the BillView class
