@@ -1,0 +1,118 @@
+commit 0140a1958efc31e72b9fec2e53b8bcdfc836fbb0
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 05:33:45 2025 -0400
+
+    Checkstyle Compliance
+    
+    1) Removed more whitespace from
+    TestConstructor
+
+commit ad7974044d277163e78a927fc4dcdb36ccab552f
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 05:28:59 2025 -0400
+
+    Checkstyle Compliance
+    
+    1) Changed method names in TestAddItem
+    and TestConstructor to have proper
+    capitalization
+    2) Removed unneccessary whitespace in
+    previously mentioned classes
+
+commit 0e8406932e9260080c3454c1ce3032688ed2f98a
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 04:36:34 2025 -0400
+
+    Added New Test Method
+    
+    1) Added TestAddItemWhenItemIsNull to
+    TestAddItem class
+
+commit 96dd8da0b79f56ef09dbaa6c15caea774a10a94d
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 04:28:20 2025 -0400
+
+    Added New Test Class and Test Method
+    
+    1) Created the TestAddItem class
+    2) Made the TestAddItemWhenItemIsValid method
+
+commit b4bc32c029157a88ae174f9795c9e0c23bc136b3
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 02:01:14 2025 -0400
+
+    Added New Test Method to TestConstructor
+    
+    1) Added TestConstructorWhenAmountIsNegative
+
+commit 52eca5b1573a8e8237015ae0a88e17b715493757
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 01:56:55 2025 -0400
+
+    Added New Test Method
+    
+    1) Added TestConstructorWhenAmountIsZero
+
+commit 642f2dd5eb00e4986e242867380afa5cb556fa7c
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 01:38:29 2025 -0400
+
+    Added New Test Method
+    
+    1) Added TestConstructorWhenNameIsNull
+    2) Changed TestProperInput to
+    TestConstructorWhenInputsIsExpectedTypes
+
+commit a9021f47b5ac459862011c3789af23ae4c7ef2e2
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 00:51:05 2025 -0400
+
+    Created First Test Class
+    
+    1) Created the TestConstructor class
+    2) Created the TestProperInput method
+
+commit 8bdee9aa7c26fc0a6821b94f8c096f08709aebe1
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Wed Aug 27 23:24:47 2025 -0400
+
+    Magic Numbers
+    
+    1) Replaced tax and tip values in
+    getText() with static, final variables
+
+commit bb99f33d582eefd45c936f020103531b618d3046
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Wed Aug 27 22:32:48 2025 -0400
+
+    Poor Seperation Of Concerns
+    
+    1) Created a new view package
+    2) Added the BillView class
+    3) Moved and refactored the getText()
+    method to work inside the BillView class
+
+commit e16a16840b583c8df57ff286c981055efa7c0ae2
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Aug 21 11:23:27 2025 -0400
+
+    Adding Base Project
+    
+    1) Adding Eclipse project to /code/
+
+commit d54161c5af1b5f5ad271e727b0024a94d1285523
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Aug 21 11:00:54 2025 -0400
+
+    Adding Base Project Structure
+    
+    1) Creating the README for
+    the project (/README.md)
+    2) Creating the code directory for
+    the project (/code/)
+
+commit af8ccc532be04135c63c9c18a912ff3a59993d9f
+Author: awebbUWG24 <awebb22@my.westga.edu>
+Date:   Tue Aug 19 10:04:41 2025 -0400
+
+    Initial commit
