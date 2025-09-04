@@ -24,5 +24,16 @@ class TestAddItem {
 		assertEquals("Chicken", resultName);
 		assertEquals(5.0, resultAmount, 0.001);
 	}
+	
+	@Test
+	public void TestAddItemWhenItemIsNull() {
+		Bill testBill = new Bill();
+		
+		assertThrows(IllegalArgumentException.class,
+				() -> {
+					testBill.addItem(null);
+				}
+				);
+	}
 
 }
