@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 class TestConstructor {
 	
 	@Test
-	public void TestProperInput() {
+	public void TestConstructorWhenInputIsExpectedTypes() {
 		String name = "Chicken";
 		double price = 5.0;
 		
@@ -21,6 +21,15 @@ class TestConstructor {
 		
 		assertEquals("Chicken", resultName);
 		assertEquals(5.0, resultAmount, 0.001);
+	}
+	
+	@Test
+	public void TestConstructorWhenNameIsNull () {
+		assertThrows(IllegalArgumentException.class,
+				() -> {
+					new BillItem(null, 5.0);
+				}
+				);
 	}
 
 }
