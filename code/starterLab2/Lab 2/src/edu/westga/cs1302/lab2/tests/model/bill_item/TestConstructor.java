@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 class TestConstructor {
 	
 	@Test
-	public void TestConstructorWhenInputIsExpectedTypes() {
+	public void testConstructorWhenInputIsExpectedTypes() {
 		String name = "Chicken";
 		double price = 5.0;
 		
@@ -24,7 +24,7 @@ class TestConstructor {
 	}
 	
 	@Test
-	public void TestConstructorWhenNameIsNull () {
+	public void testConstructorWhenNameIsNull () {
 		assertThrows(IllegalArgumentException.class,
 				() -> {
 					new BillItem(null, 5.0);
@@ -33,7 +33,7 @@ class TestConstructor {
 	}
 	
 	@Test
-	public void TestConstructorWhenAmountIsZero () {
+	public void testConstructorWhenAmountIsZero() {
 		assertThrows(IllegalArgumentException.class,
 				() -> {
 					new BillItem("Chicken", 0.0);
@@ -42,7 +42,7 @@ class TestConstructor {
 	}
 	
 	@Test
-	public void TestConstructorWhenAmountIsNegative () {
+	public void testConstructorWhenAmountIsNegative() {
 		assertThrows(IllegalArgumentException.class,
 				() -> {
 					new BillItem("Chicken", -1.0);

@@ -11,7 +11,7 @@ import edu.westga.cs1302.lab2.model.BillItem;
 class TestAddItem {
 
 	@Test
-	public void TestAddItemWhenItemIsValid() {
+	public void testAddItemWhenItemIsValid() {
 		BillItem testItem = new BillItem("Chicken", 5.0);
 		BillItem testItem2 = new BillItem("Apple", 2.0);
 		Bill testBill = new Bill();
@@ -26,7 +26,7 @@ class TestAddItem {
 	}
 	
 	@Test
-	public void TestAddItemWhenItemIsNull() {
+	public void testAddItemWhenItemIsNull() {
 		Bill testBill = new Bill();
 		
 		assertThrows(IllegalArgumentException.class,
