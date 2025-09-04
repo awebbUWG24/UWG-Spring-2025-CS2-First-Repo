@@ -40,5 +40,14 @@ class TestConstructor {
 				}
 				);
 	}
+	
+	@Test
+	public void TestConstructorWhenAmountIsNegative () {
+		assertThrows(IllegalArgumentException.class,
+				() -> {
+					new BillItem("Chicken", -1.0);
+				}
+				);
+	}
 
 }
