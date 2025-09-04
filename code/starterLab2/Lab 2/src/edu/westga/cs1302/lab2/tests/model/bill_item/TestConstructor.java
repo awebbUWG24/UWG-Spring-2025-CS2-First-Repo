@@ -24,7 +24,7 @@ class TestConstructor {
 	}
 	
 	@Test
-	public void testConstructorWhenNameIsNull () {
+	public void testConstructorWhenNameIsNull() {
 		assertThrows(IllegalArgumentException.class,
 				() -> {
 					new BillItem(null, 5.0);
