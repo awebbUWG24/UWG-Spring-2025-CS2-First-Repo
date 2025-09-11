@@ -16,7 +16,7 @@
       <TextField fx:id="name" />
       <Label text="Amount" />
       <TextField fx:id="amount" />
-      <Button mnemonicParsing="false" onAction="#additem" text="Add Item" />
-      <TextArea editable="false" prefHeight="200.0" prefWidth="200.0" />
+      <Button mnemonicParsing="false" onAction="#addItem" text="Add Item" />
+      <TextArea fx:id="billDisplay" editable="false" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </VBox>
