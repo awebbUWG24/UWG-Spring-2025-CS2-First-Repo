@@ -68,4 +68,26 @@ public class BillCalculator {
 		
 		return tip;
 	}
+	
+	/** Calculates a total for a given bill.
+	 * 
+	 * @precondition bill != null
+	 * 
+	 * @param bill the bill of items that the total will calculate
+	 * @return the total of the bill
+	 */
+	public static double calculateTotal(Bill bill) {
+		if (bill == null) {
+			throw new NullPointerException("Bill cannot be null.");
+		}
+		
+		double subtotal = calculateSubtotal(bill);
+		double tax = calculateTax(bill);
+		double tip = calculateTip(bill);
+		
+		double total = subtotal + tax + tip;
+		
+		return total;
+	}
+			
 }
