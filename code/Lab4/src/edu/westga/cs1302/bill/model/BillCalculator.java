@@ -30,4 +30,23 @@ public class BillCalculator {
 		}
 		return subtotal;
 	}
+	
+	/** Calculates a tax for a given bill.
+	 * 
+	 * @precondition bill != null
+	 * 
+	 * @param bill the bill of items that the tax will calculate
+	 * @return the tax of the bill
+	 */
+	public static double calculateTax(Bill bill) {
+		if (bill == null) {
+			throw new NullPointerException("Bill cannot be null.");
+		}
+		
+		double subtotal = calculateSubtotal(bill);
+		
+		double tax = subtotal * Bill.TAX_RATE;
+		
+		return tax;
+	}
 }
