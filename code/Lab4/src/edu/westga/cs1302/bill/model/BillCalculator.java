@@ -49,4 +49,23 @@ public class BillCalculator {
 		
 		return tax;
 	}
+	
+	/** Calculates a tip for a given bill.
+	 * 
+	 * @precondition bill != null
+	 * 
+	 * @param bill the bill of items that the tip will calculate
+	 * @return the tip of the bill
+	 */
+	public static double calculateTip(Bill bill) {
+		if (bill == null) {
+			throw new NullPointerException("Bill cannot be null.");
+		}
+		
+		double subtotal = calculateSubtotal(bill);
+		
+		double tip = subtotal * Bill.TIP_RATE;
+		
+		return tip;
+	}
 }

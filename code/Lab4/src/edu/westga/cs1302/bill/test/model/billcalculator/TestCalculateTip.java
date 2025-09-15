@@ -8,14 +8,14 @@ import edu.westga.cs1302.bill.model.Bill;
 import edu.westga.cs1302.bill.model.BillCalculator;
 import edu.westga.cs1302.bill.model.BillItem;
 
-class TestCalculateTax {
+class TestCalculateTip {
 
 	@Test
-	void testCalculateTaxWhenBillIsNull() {
+	void testCalculateTipWhenBillIsNull() {
 		Bill testBill = null;
 		
 		assertThrows(NullPointerException.class, () -> {
-			BillCalculator.calculateTax(testBill);
+			BillCalculator.calculateTip(testBill);
 		});
 	}
 	
@@ -28,9 +28,9 @@ class TestCalculateTax {
 		testBill.addItem(chicken);
 		testBill.addItem(apple);
 		
-		double result = BillCalculator.calculateTax(testBill);
+		double result = BillCalculator.calculateTip(testBill);
 		
-		assertEquals(result, 0.8, 0.001);
+		assertEquals(result, 1.6, 0.001);
 	}
 
 }
