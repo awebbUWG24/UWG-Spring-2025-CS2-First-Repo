@@ -40,6 +40,9 @@ public class MainWindow {
     @FXML
     private ComboBox<String> taskPrio;
     
+    @FXML
+    private Button updateDescButton;
+    
     /**
      * Adding a new task to the taskList
      * 
@@ -66,6 +69,11 @@ public class MainWindow {
     void viewTask(MouseEvent event) {
     	this.selectedTaskDesc.setText(this.taskList.getSelectionModel().getSelectedItem().getTaskDescription());
     	this.selectedTaskPrio.setText(Integer.toString(this.taskList.getSelectionModel().getSelectedItem().getTaskPriority()));
+    }
+    
+    @FXML
+    void updateDescription(ActionEvent event) {
+    	
     }
     
     /**

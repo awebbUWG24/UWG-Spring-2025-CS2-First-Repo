@@ -76,4 +76,19 @@ public class Task {
 	public int getTaskPriority() {
 		return this.taskPriority;
 	}
+	
+	/**
+	 * Changes the description of the task
+	 * 
+	 * @precondition descriptionText != null &&  descriptionText.isBlank() = false
+	 * 
+	 * @param descriptionText the new description of the task
+	 */
+	public void setDescription(String descriptionText) {
+		if (descriptionText == null || descriptionText.isBlank()) {
+			throw new IllegalArgumentException("Description cannot be blank or null");
+		}
+		
+		this.taskDescription = descriptionText;
+	}
 }
