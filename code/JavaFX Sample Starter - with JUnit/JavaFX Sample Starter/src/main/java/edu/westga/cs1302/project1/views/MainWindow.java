@@ -2,6 +2,7 @@ package edu.westga.cs1302.project1.views;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
@@ -39,9 +40,19 @@ public class MainWindow {
      */
     @FXML
     public void addTask(ActionEvent event) {
-    	Task newTask = new Task(this.taskName.getText(), this.taskDesc.getText(), Integer.parseInt(this.taskPrio.getValue()));
+    	try {
+    		Task newTask = new Task(this.taskName.getText(), this.taskDesc.getText(), Integer.parseInt(this.taskPrio.getValue()));
+    		this.taskList.getItems().add(newTask.toString());
+    	} catch (NumberFormatException exception) {
+    		Alert alert = new Alert(Alert.AlertType.ERROR);
+    		alert.setContentText("You must select a priority level.");
+    		alert.showAndWait();
+    	} catch (IllegalArgumentException exception) {
+    		Alert alert = new Alert(Alert.AlertType.ERROR);
+    		alert.setContentText(exception.getMessage());
+    		alert.showAndWait();
+    	} 
     	
-    	this.taskList.getItems().add(newTask.toString());
     }
     
     /**
