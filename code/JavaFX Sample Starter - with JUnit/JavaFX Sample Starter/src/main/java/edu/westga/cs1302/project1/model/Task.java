@@ -21,7 +21,7 @@ public class Task {
 	 * 
 	 * @param name the name of the task
 	 * @param description the description of the details of the task
-	 * @param priority the level of importance the task holds 
+	 * @param priority the level of importance the task holds, with 3 being the highest priority 
 	 */
 	public Task(String name, String description, int priority) {
 		if (name == null || name.isBlank()) {

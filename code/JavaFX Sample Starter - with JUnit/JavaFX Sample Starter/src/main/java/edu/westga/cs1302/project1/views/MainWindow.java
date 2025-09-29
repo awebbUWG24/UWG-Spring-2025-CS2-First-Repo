@@ -1,5 +1,6 @@
 package edu.westga.cs1302.project1.views;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -16,7 +17,7 @@ import javafx.scene.control.TextField;
 public class MainWindow {
 	
 	@FXML
-    private Button addTask;
+    private Button addTaskButton;
 	
 	@FXML
     private TextArea taskDesc;
@@ -29,6 +30,16 @@ public class MainWindow {
 
     @FXML
     private ComboBox<String> taskPrio;
+    
+    /**
+     * Adding a new task to the taskList
+     * 
+     * @param event when the button is pressed.
+     */
+    @FXML
+    public void addTask(ActionEvent event) {
+    	
+    }
     
     /**
      * Perform any needed initialization of UI components and underlying objects.
