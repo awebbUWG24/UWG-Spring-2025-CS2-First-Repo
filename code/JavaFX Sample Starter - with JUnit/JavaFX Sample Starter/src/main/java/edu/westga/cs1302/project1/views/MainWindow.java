@@ -7,6 +7,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import edu.westga.cs1302.project1.model.Task;
 
 /**
  * Controller class for drawing various things to our canvas window.
@@ -38,13 +39,16 @@ public class MainWindow {
      */
     @FXML
     public void addTask(ActionEvent event) {
+    	Task newTask = new Task(this.taskName.getText(), this.taskDesc.getText(), Integer.parseInt(this.taskPrio.getValue()));
     	
+    	this.taskList.getItems().add(newTask.toString());
     }
     
     /**
      * Perform any needed initialization of UI components and underlying objects.
      */
     public void initialize() {
-    	
+    	String[] priorities = {"1", "2", "3"};
+    	this.taskPrio.getItems().addAll(priorities);
     }
 }
