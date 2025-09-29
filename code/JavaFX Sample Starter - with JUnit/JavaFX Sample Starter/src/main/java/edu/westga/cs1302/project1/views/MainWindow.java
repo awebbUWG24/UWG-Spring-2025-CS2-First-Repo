@@ -8,6 +8,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import edu.westga.cs1302.project1.model.Task;
 
 /**
@@ -22,10 +23,16 @@ public class MainWindow {
     private Button addTaskButton;
 	
 	@FXML
+    private TextArea selectedTaskDesc;
+
+	@FXML
+    private TextField selectedTaskPrio;
+	
+	@FXML
     private TextArea taskDesc;
 
     @FXML
-    private ListView<String> taskList;
+    private ListView<Task> taskList;
 
     @FXML
     private TextField taskName;
@@ -42,7 +49,7 @@ public class MainWindow {
     public void addTask(ActionEvent event) {
     	try {
     		Task newTask = new Task(this.taskName.getText(), this.taskDesc.getText(), Integer.parseInt(this.taskPrio.getValue()));
-    		this.taskList.getItems().add(newTask.toString());
+    		this.taskList.getItems().add(newTask);
     	} catch (NumberFormatException exception) {
     		Alert alert = new Alert(Alert.AlertType.ERROR);
     		alert.setContentText("You must select a priority level.");
