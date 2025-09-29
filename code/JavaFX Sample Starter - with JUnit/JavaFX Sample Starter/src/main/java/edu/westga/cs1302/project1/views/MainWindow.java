@@ -62,6 +62,12 @@ public class MainWindow {
     	
     }
     
+    @FXML
+    void viewTask(MouseEvent event) {
+    	this.selectedTaskDesc.setText(this.taskList.getSelectionModel().getSelectedItem().getTaskDescription());
+    	this.selectedTaskPrio.setText(Integer.toString(this.taskList.getSelectionModel().getSelectedItem().getTaskPriority()));
+    }
+    
     /**
      * Perform any needed initialization of UI components and underlying objects.
      */
