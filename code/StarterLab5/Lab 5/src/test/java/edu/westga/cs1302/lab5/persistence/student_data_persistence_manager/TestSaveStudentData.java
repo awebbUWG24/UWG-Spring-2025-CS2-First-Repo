@@ -2,7 +2,6 @@ package edu.westga.cs1302.lab5.persistence.student_data_persistence_manager;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 import org.junit.jupiter.api.Test;
