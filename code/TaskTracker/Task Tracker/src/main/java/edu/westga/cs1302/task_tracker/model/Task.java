@@ -19,14 +19,6 @@ public class Task {
 		
 		private int taskLevelNumber;
 		
-		/** Return the task priority in numerical form
-		 * 
-		 * @return the numerical level of the task priority
-		 */
-		public int getTaskLevelNumber() {
-			return this.taskLevelNumber;
-		}
-		
 		/** Enum constructor that assigns an integer value to each task priority level
 		 * 
 		 * @precondition none
@@ -36,6 +28,14 @@ public class Task {
 		 */
 		TaskPriority(int taskLevelNumber) {
 			this.taskLevelNumber = taskLevelNumber;
+		}
+		
+		/** Return the task priority in numerical form
+		 * 
+		 * @return the numerical level of the task priority
+		 */
+		public int getTaskLevelNumber() {
+			return this.taskLevelNumber;
 		}
 	}
 	
