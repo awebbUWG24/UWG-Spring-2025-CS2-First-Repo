@@ -31,4 +31,9 @@ public class Ascending implements Comparator<Task> {
 		return orderValue;
 	}
 	
+	@Override
+	public String toString() {
+		return "Ascending";
+	}
+	
 }

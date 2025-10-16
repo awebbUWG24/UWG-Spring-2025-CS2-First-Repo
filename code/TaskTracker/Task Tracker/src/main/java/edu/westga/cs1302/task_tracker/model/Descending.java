@@ -30,5 +30,10 @@ public class Descending implements Comparator<Task> {
 		
 		return orderValue;
 	}
+	
+	@Override
+	public String toString() {
+		return "Descending";
+	}
 
 }
