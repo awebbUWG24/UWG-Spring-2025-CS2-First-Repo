@@ -1,5 +1,7 @@
 package edu.westga.cs1302.task_tracker.model;
 
+import java.util.ArrayList;
+
 /** Stores basic information for a Task
  * 
  * @author CS 1302
@@ -124,5 +126,35 @@ public class Task {
 	@Override
 	public String toString() {
 		return this.name;
+	}
+	
+	/** Returns a ContainerTask of similar parameters that contains the task that was input as a Subtask
+	 *	
+	 * @precondition taskToAdd != null
+	 * @postcondition none
+	 * 
+	 * @param taskToAdd the task you want to add as a subtask
+	 * 
+	 * @return a ContainerTask object that has similar fields to the original Task object, with a subtask contained within
+	 */
+	public ContainerTask addTask(Task taskToAdd) {
+		
+		if (taskToAdd == null) {
+			throw new IllegalArgumentException("Task cannot be null");
+		}
+		
+		ContainerTask containTask = new ContainerTask(this.name, this.description, this.priority);
+		containTask.addTask(taskToAdd);
+		
+		return containTask;
+	}
+	
+	/** Returns an empty list of sub Tasks 
+	 * 
+	 * @return an empty list of task objects
+	 */
+	public ArrayList<Task> getSubTasks() {
+		
+		return new ArrayList<Task>();
 	}
 }
