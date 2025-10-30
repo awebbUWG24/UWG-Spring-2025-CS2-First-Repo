@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 import edu.westga.cs1302.task_tracker.model.PriorityAscending;
 import edu.westga.cs1302.task_tracker.model.PriorityDescending;
+import edu.westga.cs1302.task_tracker.model.ContainerTask;
 import edu.westga.cs1302.task_tracker.model.NameAscending;
 import edu.westga.cs1302.task_tracker.model.NameDescending;
 import edu.westga.cs1302.task_tracker.model.Task;
@@ -78,6 +79,7 @@ public class MainWindow {
     	if (selectedTask != null) {
     		this.selectedPriority.setText(selectedTask.getPriority().toString());
     		this.selectedDescription.setText(selectedTask.getDescription());
+    		this.subTaskList.getItems().setAll(selectedTask.getSubTasks());
     	}
     }
 
@@ -141,7 +143,28 @@ public class MainWindow {
     
     @FXML
     void addSubTask(ActionEvent event) {
-
+    	try {
+    		Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
+    		int selectedTaskIndex = this.tasks.getSelectionModel().getSelectedIndex();
+    		
+    		ContainerTask convertedTask = selectedTask.addTask(new Task(this.name.getText(), this.description.getText(), this.priority.getValue()));
+    		this.tasks.getItems().set(selectedTaskIndex, convertedTask);
+    		
+    		this.subTaskList.getItems().addAll(convertedTask.getSubTasks());
+    		
+    		if (this.order.getValue() != null) {
+        		this.tasks.getItems().sort(this.order.getValue());
+        	}
+    		
+    	} catch (IllegalArgumentException error) {
+    		Alert alert = new Alert(AlertType.ERROR);
+    		alert.setContentText(error.getMessage());
+    		alert.showAndWait();
+    	} catch (NullPointerException selectionError) {
+    		Alert alert = new Alert(AlertType.ERROR);
+    		alert.setContentText("You must select a task before adding a subtask");
+    		alert.showAndWait();
+    	}
     }
 
     /** Perform any needed initialization of UI components and underlying objects.
