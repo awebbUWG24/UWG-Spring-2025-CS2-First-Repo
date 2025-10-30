@@ -34,7 +34,7 @@
       <Label layoutX="37.0" layoutY="413.0" text="Sort Tasks" />
       <ComboBox fx:id="order" layoutX="95.0" layoutY="411.0" onAction="#sortTasks" prefHeight="25.0" prefWidth="128.0" />
       <Button fx:id="subTaskButton" layoutX="31.0" layoutY="169.0" mnemonicParsing="false" onAction="#addSubTask" text="Add SubTask" />
-      <ListView fx:id="subTaskList" layoutX="468.0" layoutY="41.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="subTaskList" layoutX="468.0" layoutY="41.0" onMouseClicked="#displaySubTask" prefHeight="200.0" prefWidth="200.0" />
       <Label layoutX="480.0" layoutY="21.0" text="Sub Tasks" />
    </children>
 </AnchorPane>
