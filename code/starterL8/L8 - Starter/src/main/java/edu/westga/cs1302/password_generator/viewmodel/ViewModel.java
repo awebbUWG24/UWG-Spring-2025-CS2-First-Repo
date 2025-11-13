@@ -7,6 +7,9 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.SimpleListProperty;
+import javafx.collections.FXCollections;
 
 /** Manages utilizing the model and makes properties available to bind the UI elements.
  * 
@@ -21,6 +24,7 @@ public class ViewModel {
 	
 	private StringProperty password;
 	private StringProperty errorText;
+	private ListProperty<String> listofPasswords;
 	
     private PasswordGenerator generator;
 	
@@ -34,6 +38,7 @@ public class ViewModel {
 		
 		this.password = new SimpleStringProperty("");
 		this.errorText = new SimpleStringProperty("");
+		this.listofPasswords = new SimpleListProperty<String>(FXCollections.observableArrayList());
 
         Random randomNumberGenerator = new Random();
         this.generator = new PasswordGenerator(randomNumberGenerator.nextLong());
@@ -86,6 +91,14 @@ public class ViewModel {
 	public StringProperty getErrorText() {
 		return this.errorText;
 	}
+	
+	/** Return the list of passwords property
+	 * 
+	 * @return the list of passwords property
+	 */
+	public ListProperty<String> getListOfPasswords() {
+		return this.listofPasswords;
+	}
 
 	/** Generates a password using the minimum length, require digit, require lower case, and require upper case property values.
 	 * 
@@ -118,6 +131,7 @@ public class ViewModel {
     	String password = this.generator.generatePassword();
     	
     	this.password.setValue(password);
+    	this.listofPasswords.getValue().add(password);
     }
 
 }

@@ -17,6 +17,7 @@ public class PasswordGenerator {
 	private boolean mustHaveAtLeastOneUpperCaseLetter;
 	private boolean mustHaveAtLeastOneLowerCaseLetter;
 	private Random randomNumberGenerator;
+	private String lastGeneratedPassword;
 
 	/**
 	 * Creates a new password generator. The generator will initially create a
@@ -35,6 +36,7 @@ public class PasswordGenerator {
 		this.mustHaveAtLeastOneDigit = false;
 		this.mustHaveAtLeastOneUpperCaseLetter = false;
 		this.mustHaveAtLeastOneLowerCaseLetter = false;
+		this.lastGeneratedPassword = "";
 	}
 
 	/**
@@ -168,8 +170,12 @@ public class PasswordGenerator {
 		while (passwordCharacters.size() < length) {
 			passwordCharacters = this.addRandomCharacter(passwordCharacters);
 		}
+		
+		String generatedPassword = this.combineCharacters(passwordCharacters);
+		
+		this.lastGeneratedPassword = generatedPassword;
 
-		return this.combineCharacters(passwordCharacters);
+		return generatedPassword;
 	}
 
 	private ArrayList<Character> addRandomCharacter(ArrayList<Character> passwordCharacters) {
@@ -228,6 +234,12 @@ public class PasswordGenerator {
 		for (Character currentChar : passwordCharacters) {
 			password += currentChar;
 		}
+		
 		return password;
+	}
+	
+	@Override
+	public String toString() {
+		return this.lastGeneratedPassword;
 	}
 }
