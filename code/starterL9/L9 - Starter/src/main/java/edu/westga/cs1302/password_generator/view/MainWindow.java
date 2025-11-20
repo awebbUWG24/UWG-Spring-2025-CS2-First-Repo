@@ -5,6 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import edu.westga.cs1302.password_generator.viewmodel.ViewModel;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -66,6 +69,8 @@ public class MainWindow {
     				this.vm.generatePassword();
     			} 
     	);
+    	
+    	this.generatePasswordButton.disableProperty().bind(this.minLengthErrorText.visibleProperty());
     }
     
     @FXML
