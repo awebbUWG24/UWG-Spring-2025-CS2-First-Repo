@@ -1,0 +1,459 @@
+commit 1ed679fcf95be11e694e82fad14834eca4f8f0e9
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Nov 13 08:04:54 2025 -0500
+
+    Store List of passwords
+    
+    Updated GUI to display list of passwords rather than
+    the most recently generated
+
+commit e06ee2ca73dfd966765f5f6c62ba4ba85cfb4b4d
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Nov 13 01:43:40 2025 -0500
+
+    Implement Input Validation
+    
+    Added change listener to minimum length field
+    and added functionality to prevent non numerical
+    characters from being added
+
+commit 6bb105255ba6a2beb6b3440c47d68d1fdcf639bc
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Nov 6 04:22:41 2025 -0500
+
+    Bind View to ViewModel
+    
+    Updated MainWindow to use the ViewModel object
+    and bound relevant properties together to make
+    the ViewModel functional
+
+commit 7cd882b35b292c17531b15e0d877372a8d2628d6
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Nov 6 03:49:43 2025 -0500
+
+    Implement ViewModel
+    
+    Created a ViewModel for the password
+    generator that handles anything needed
+    for input by reading it from the view
+    
+    Also added test classes to ensure proper
+    functionality.
+
+commit 90d6d49031dbb32ea2489bbf69a82f65f41f4544
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Oct 30 04:10:53 2025 -0400
+
+    4B – Connect UI to Business Logic for Adding Task
+    
+    Updated displaySubTask method to show a
+    popup upon selection of a subtask containing
+    the tasks name, description, and priority
+
+commit c2e8f7b3f01a529d572ab2534c13c96aee069d04
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Oct 30 04:00:02 2025 -0400
+
+    4A – UI for Adding Tasks
+    
+    Added method for displaying subtask
+    information to MainWindow
+
+commit 261160ea309677e999e809a1d7abfa3c87e0599a
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Oct 30 03:51:38 2025 -0400
+
+    3C – Connect UI to Business Logic for SubTasks
+    
+    Updated MainWindow implementation to support
+    adding subtasks
+
+commit 05282c88dc8db76e0a5d46f6e6bae4b40af1f2cf
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Oct 30 02:54:22 2025 -0400
+
+    3B – Business Logic for SubTasks
+    
+    Updated the Task Class to be able to
+    convert tasks to hold subtasks
+    
+    Created the ContainerTask class that allows
+    storage of subtasks
+    
+    Added appropriate test cases for updates made
+
+commit bcfe2e71b4dadfd2e72296f708748f5612994d10
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Tue Oct 28 17:44:28 2025 -0400
+
+    3A – UI for SubTasks
+    
+    Added UI components to support adding
+    and view subtasks
+
+commit 3d7d8b5b040aee4ebbdf5ff7411fe17e96ec5772
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Tue Oct 28 16:59:35 2025 -0400
+
+    2B – Connect UI to Business Logic for Sorting
+    
+    Updated MainWindow to use the Comparators
+    that sort by alphabetical order
+
+commit 2e1835920b4fb74ba10a86df7af3b0d4093f1b6e
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Tue Oct 28 16:38:12 2025 -0400
+
+    2A – Business Logic for Sorting Based on Name
+    
+    Updated Comparator names to better indicate what
+    logic they use to sort
+    
+    Added two new Comparators that sort by alphabetical
+    order and appropriate test cases
+
+commit 24b3ca420511604da229aa89368cb8130e71c834
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Tue Oct 28 14:03:19 2025 -0400
+
+    1A – Connect UI to Business Logic for Re-sorting
+    
+    Updated MainWindow to resort the tasks
+    whenever a task is added or updated in any way.
+
+commit 354b2222978521e4b11676f91383aa3000e45404
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Oct 16 01:19:59 2025 -0400
+
+    Support Sorting Tasks
+    
+    Reimplemented task sorting implementation
+    for UI to use Comparators
+
+commit f28d38e3e723865384b3a69b71526cebca55250f
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Tue Oct 14 12:20:21 2025 -0400
+
+    Descending Comparison of Tasks
+    
+    Implemented a Comparator that places higher priority objects
+    first. Also added appropriate test cases.
+
+commit a34e994d066e5ea890dc5ab5e8d959877b11b472
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Tue Oct 14 10:01:11 2025 -0400
+
+    Ascending Comparison of Tasks
+    
+    Added a Comparator that compares task
+    priorities, with low going first and high
+    going last.
+    
+    Added appropriate test cases for Ascending
+    Comparator
+
+commit f55872b964f54045140c49c024e0f50c49ce9dbd
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Oct 2 08:55:46 2025 -0400
+
+    Load Student Data
+    
+    Changed load data method to read CSV format
+
+commit 805181f36b35c256621bed2f511ddb267602be4c
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Oct 2 05:25:24 2025 -0400
+
+    Save Student Data
+    
+    Changed the saveStudentDataMethod to fit CSV
+    format and added test cases
+
+commit 7b8c0f024c48469b55e2427c2bec98dc843e97ec
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Mon Sep 29 08:57:29 2025 -0400
+
+    2B Business Logic for updating description of task
+    
+    Added setDescription to Task class and appropriate test methods
+
+commit 8918bd7a8125fc1296e54812e1bfe79ca2e2ba31
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Mon Sep 29 08:45:05 2025 -0400
+
+    3A - Implementing UI
+    
+    Added button to update text, method not implemented
+    Allowed seleted description to be editied now3A - Implementing UI
+    
+    Added button to update text, method not implemented
+    Allowed seleted description to be editied now3A - Implementing UI
+    
+    Added button to update text, method not implemented
+    Allowed seleted description to be editied now
+
+commit 4df5a32c9662aec3075c5254afaf401c1b57fe9c
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Mon Sep 29 08:38:49 2025 -0400
+
+    2B - Connect UI to Business Logic for Adding Task
+    
+    Added a method that displays selected task's
+    description and priority level in the
+    appropriate UI components.
+
+commit 902e503c9955c1e5e42a3c83cd45c6c065a9467e
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Mon Sep 29 08:37:02 2025 -0400
+
+    2A - UI for Adding Task
+    
+    Added components to display a selected
+    task's description and priority level
+
+commit a599f4e533f3c4dfee7fa3936985aa5f0fa2c6f5
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Mon Sep 29 07:59:16 2025 -0400
+
+    1C - Connect UI to Business Logic for Adding Task
+    
+    Added try catch statements to handle exceptions given
+    in MainWindow (refer to earlier commit)
+
+commit d69ab274e77c65b779814dce30164f0f0655d39c
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Mon Sep 29 07:41:19 2025 -0400
+
+    1C - Connect UI to Business Logic for Adding Task
+    
+    implemented addTask method in MainWindow and
+    added functionality to taskList and taskPrio
+
+commit 8fb83c81583ef78be1309809a430c00c1e439406
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Mon Sep 29 06:05:12 2025 -0400
+
+    UI for Adding Tasks
+    
+    Referring to earlier commit, added method
+    to Button in controller class
+
+commit 347295965bb19f17a98ef610cc38962ec339742b
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Mon Sep 29 05:49:15 2025 -0400
+
+    Business Logic for Storing a Task
+    
+    Added constructor, getters and toString method
+    for Task class along with appropriate test cases
+
+commit bb349dd4b92ad723ceae114811df0223da83f2a4
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Mon Sep 29 02:53:56 2025 -0400
+
+    A – UI for Adding Tasks
+    
+    Added JavaFx components for adding task
+    components and viewing list of tasks
+
+commit 719ecfe31a1ab1620e82732a95217d2ad4360763
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Mon Sep 15 02:14:27 2025 -0400
+
+    Added CalculateTotal Method
+    
+    Added CalculateTotal Method and
+    appropriate test cases
+
+commit 181a80fc34ca5a1ab259bca4a59566c5f6af9c24
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Mon Sep 15 01:43:19 2025 -0400
+
+    Added CalculateTip Method
+    
+    Added CalculateTip method and
+    appropriate test cases
+
+commit c19e574da7ac23fbad4c60dafa01424f191e372e
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Mon Sep 15 00:51:59 2025 -0400
+
+    Added CalculateTax Method
+    
+    Added CalculateTax method and
+    appropriate test cases
+
+commit 48645b6bd150dc1d51646f210a3b39ed75e58c71
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Mon Sep 15 00:20:16 2025 -0400
+
+    Added CalculateSubtotal Method
+    
+    Added CalculateSubtotal method and
+    appropriate test cases
+
+commit 1b5ba9a0b53eca491998e037ff64106e228612fb
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 11 12:10:58 2025 -0400
+
+    Making BillItem fields Final
+    
+    Converted instance variables in BillItem class
+    to final variables
+
+commit af87bfb72b90e784d28f56fba98b3ca523ef1592
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Wed Sep 10 21:26:21 2025 -0400
+
+    Creating a Bill Display
+    
+    1) Created the displaythemod to recieve
+    user input and display it on a Bill
+    2) Created a catch in the scenario of
+    an improper amount input
+
+commit 857d66bdc4cf662ea9517137d43c58e42e0aebbd
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 12:31:03 2025 -0400
+
+    Setting Up Lab 3 UI
+    
+    Created UI layout in scenebuilder
+    Added design elements to MainWindow to initialize
+
+commit 0eaf39ff18da72debdbadfe7d0b6ee113e81070d
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 10:49:00 2025 -0400
+
+    Setting Up Java Fx Lab3
+    
+    Added Bill model glassse to javafx sample project
+    Renamed project and base package for lab3 along with corresponding refrences
+    Did not incorporate test for Bill project classes yet.
+
+commit f1b649fd28b211637e1c8bc3e2eb534885abbc30
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 05:51:25 2025 -0400
+
+    Commit History
+    
+    1) Added commit history to /Lab2/
+
+commit 0140a1958efc31e72b9fec2e53b8bcdfc836fbb0
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 05:33:45 2025 -0400
+
+    Checkstyle Compliance
+    
+    1) Removed more whitespace from
+    TestConstructor
+
+commit ad7974044d277163e78a927fc4dcdb36ccab552f
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 05:28:59 2025 -0400
+
+    Checkstyle Compliance
+    
+    1) Changed method names in TestAddItem
+    and TestConstructor to have proper
+    capitalization
+    2) Removed unneccessary whitespace in
+    previously mentioned classes
+
+commit 0e8406932e9260080c3454c1ce3032688ed2f98a
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 04:36:34 2025 -0400
+
+    Added New Test Method
+    
+    1) Added TestAddItemWhenItemIsNull to
+    TestAddItem class
+
+commit 96dd8da0b79f56ef09dbaa6c15caea774a10a94d
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 04:28:20 2025 -0400
+
+    Added New Test Class and Test Method
+    
+    1) Created the TestAddItem class
+    2) Made the TestAddItemWhenItemIsValid method
+
+commit b4bc32c029157a88ae174f9795c9e0c23bc136b3
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 02:01:14 2025 -0400
+
+    Added New Test Method to TestConstructor
+    
+    1) Added TestConstructorWhenAmountIsNegative
+
+commit 52eca5b1573a8e8237015ae0a88e17b715493757
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 01:56:55 2025 -0400
+
+    Added New Test Method
+    
+    1) Added TestConstructorWhenAmountIsZero
+
+commit 642f2dd5eb00e4986e242867380afa5cb556fa7c
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 01:38:29 2025 -0400
+
+    Added New Test Method
+    
+    1) Added TestConstructorWhenNameIsNull
+    2) Changed TestProperInput to
+    TestConstructorWhenInputsIsExpectedTypes
+
+commit a9021f47b5ac459862011c3789af23ae4c7ef2e2
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Sep 4 00:51:05 2025 -0400
+
+    Created First Test Class
+    
+    1) Created the TestConstructor class
+    2) Created the TestProperInput method
+
+commit 8bdee9aa7c26fc0a6821b94f8c096f08709aebe1
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Wed Aug 27 23:24:47 2025 -0400
+
+    Magic Numbers
+    
+    1) Replaced tax and tip values in
+    getText() with static, final variables
+
+commit bb99f33d582eefd45c936f020103531b618d3046
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Wed Aug 27 22:32:48 2025 -0400
+
+    Poor Seperation Of Concerns
+    
+    1) Created a new view package
+    2) Added the BillView class
+    3) Moved and refactored the getText()
+    method to work inside the BillView class
+
+commit e16a16840b583c8df57ff286c981055efa7c0ae2
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Aug 21 11:23:27 2025 -0400
+
+    Adding Base Project
+    
+    1) Adding Eclipse project to /code/
+
+commit d54161c5af1b5f5ad271e727b0024a94d1285523
+Author: Aiden Webb <awebb22@my.westga.edu>
+Date:   Thu Aug 21 11:00:54 2025 -0400
+
+    Adding Base Project Structure
+    
+    1) Creating the README for
+    the project (/README.md)
+    2) Creating the code directory for
+    the project (/code/)
+
+commit af8ccc532be04135c63c9c18a912ff3a59993d9f
+Author: awebbUWG24 <awebb22@my.westga.edu>
+Date:   Tue Aug 19 10:04:41 2025 -0400
+
+    Initial commit
