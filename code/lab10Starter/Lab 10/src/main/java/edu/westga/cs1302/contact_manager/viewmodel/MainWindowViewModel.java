@@ -89,7 +89,17 @@ public class MainWindowViewModel {
 	 * @throws IllegalArgumentException if either name or phone number are invalid (see Contact class)
 	 */
 	public void addContact() throws IllegalArgumentException {
-		this.contacts.add(new Contact(this.name.get(), this.phoneNumber.get()));
+		if (this.contactMap.containsKey(this.phoneNumber.get())) {
+			throw new IllegalArgumentException("New contacts cannot share a phone number with previously added contacts");
+		}
+		
+		for (Entry<String, Contact> currContact : this.contactMap.entrySet()) {
+			if (currContact.getValue().getName().equals(this.name.get())) {
+				throw new IllegalArgumentException("New contacts cannot share a name with previously added contacts");
+			}
+		}
+			this.contacts.add(new Contact(this.name.get(), this.phoneNumber.get()));
+			this.contactMap.put(this.phoneNumber.get(), new Contact(this.name.get(), this.phoneNumber.get()));
 	}
 	
 	/** Finds a contact with name or phone number matches provide search criteria
@@ -105,10 +115,6 @@ public class MainWindowViewModel {
 		}
 		
 		String foundContact = "No contact Found";
-		
-		for (Contact contactToConvert : this.contacts.get()) {
-			this.contactMap.put(contactToConvert.getPhoneNumber(), contactToConvert);
-		}
 		
 		if (this.contactMap.containsKey(this.searchCriteria.get())) {
 			foundContact = this.contactMap.get(this.searchCriteria.getValue()).toString();
