@@ -1,5 +1,7 @@
 package edu.westga.cs1302.comic_collections.views;
 
+import edu.westga.cs1302.comic_collections.model.ComicCollection;
+import edu.westga.cs1302.comic_collections.viewmodel.Project3ViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,24 +17,32 @@ import javafx.scene.control.TextField;
 public class MainWindow {
 
     @FXML private Button addCollectionButton;
-    @FXML private ListView<?> collectionList;
+    @FXML private ListView<ComicCollection> collectionList;
     @FXML private TextField collectionName;
     @FXML private Button removeCollectionButton;
     @FXML private MenuItem removeCollectionMenuItem;
-    
-    @FXML
-    void addCollection(ActionEvent event) {
-
-    }
+    private Project3ViewModel vm;
 
     @FXML
     void removeCollection(ActionEvent event) {
 
     }
     
+    void bindUIElements() {
+    	this.addCollectionButton.setOnAction((event) -> { 
+    		this.vm.createCollection();
+    		});
+    	this.removeCollectionButton.setOnAction((event) -> { 
+    		this.vm.removeCollection();
+    		});
+    	
+    	this.collectionList.setItems(this.vm.getCollectionList());
+    	this.vm.getSelectedCollection().bind(this.collectionList.getSelectionModel().selectedItemProperty());
+    }
+    
     @FXML
     void intialize() {
-    	
+    	this.bindUIElements();
     }
 
 }
