@@ -15,4 +15,8 @@ public class ComicCollection {
 	public ComicCollection() {
 		this.collectionName = "";
 	}
+	
+	public String getName() {
+		return this.collectionName;
+	}
 }
