@@ -12,10 +12,14 @@ public class ComicCollection {
 	/**
 	 * Creates a comic collection
 	 */
-	public ComicCollection() {
-		this.collectionName = "";
+	public ComicCollection(String collectionName) {
+		this.collectionName = collectionName;
 	}
 	
+	/** Gets the name of the collection
+	 * 
+	 * @return the name of the collection
+	 */
 	public String getName() {
 		return this.collectionName;
 	}
