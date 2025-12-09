@@ -1,6 +1,9 @@
 package edu.westga.cs1302.comic_collections.views;
 
+import java.util.Optional;
+
 import edu.westga.cs1302.comic_collections.Main;
+import edu.westga.cs1302.comic_collections.model.Comic;
 import edu.westga.cs1302.comic_collections.model.ComicCollection;
 import edu.westga.cs1302.comic_collections.viewmodel.Project3ViewModel;
 import javafx.event.ActionEvent;

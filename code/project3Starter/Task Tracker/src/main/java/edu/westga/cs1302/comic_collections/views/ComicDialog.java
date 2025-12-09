@@ -1,5 +1,6 @@
 package edu.westga.cs1302.comic_collections.views;
 
+import edu.westga.cs1302.comic_collections.model.Comic;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Dialog;
@@ -12,7 +13,7 @@ import javafx.stage.Stage;
  * @author AidenWebb
  * @version Fall 2025
  */
-public class ComicDialog extends Dialog<Comic>{
+public class ComicDialog extends Dialog<Comic> {
 	 @FXML private Button addComic;
 	 @FXML private Button cancel;
 	 @FXML private TextField comicNameField;
