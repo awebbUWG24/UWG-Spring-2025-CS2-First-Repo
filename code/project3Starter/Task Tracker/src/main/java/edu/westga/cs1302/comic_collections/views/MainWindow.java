@@ -16,33 +16,40 @@ import javafx.scene.control.TextField;
  */
 public class MainWindow {
 
-    @FXML private Button addCollectionButton;
+    @FXML private Button addCollection;
     @FXML private ListView<ComicCollection> collectionList;
     @FXML private TextField collectionName;
     @FXML private Button removeCollectionButton;
     @FXML private MenuItem removeCollectionMenuItem;
+    
     private Project3ViewModel vm;
-
+ 
     @FXML
-    void removeCollection(ActionEvent event) {
-
+    void initialize() {
+    	this.vm = new Project3ViewModel();
+    	this.bindUIElements();
+    	this.bindBehavior();
     }
     
-    void bindUIElements() {
-    	this.addCollectionButton.setOnAction((event) -> { 
-    		this.vm.createCollection();
-    		});
+    private void bindUIElements() {    	
+    	this.collectionList.itemsProperty().bind(this.vm.getCollectionList());
+    	this.vm.getSelectedCollection().bind(this.collectionList.getSelectionModel().selectedItemProperty());
+    	this.collectionName.textProperty().bindBidirectional(this.vm.getCollectionName());
+    	
+    }
+    
+    private void bindBehavior() {
+    	this.addCollection.setOnAction(
+    			(ActionEvent event) -> {
+    				this.vm.createCollection();
+    			}
+    	);
+    	
+    	this.addCollection.disableProperty().bind(this.collectionName.textProperty().isEmpty());
+    	
     	this.removeCollectionButton.setOnAction((event) -> { 
     		this.vm.removeCollection();
-    		});
-    	
-    	this.collectionList.setItems(this.vm.getCollectionList());
-    	this.vm.getSelectedCollection().bind(this.collectionList.getSelectionModel().selectedItemProperty());
-    }
-    
-    @FXML
-    void intialize() {
-    	this.bindUIElements();
+    	});
     }
 
 }

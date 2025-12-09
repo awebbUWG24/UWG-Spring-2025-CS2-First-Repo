@@ -1,6 +1,7 @@
 package edu.westga.cs1302.comic_collections.viewmodel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import edu.westga.cs1302.comic_collections.model.ComicCollection;
 import javafx.beans.property.ListProperty;
@@ -10,6 +11,8 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 /** ViewModel for Project 3
  * 
@@ -21,6 +24,7 @@ public class Project3ViewModel {
 	private StringProperty collectionName;
 	private ListProperty<ComicCollection> collectionList;
 	private ObjectProperty<ComicCollection> selectedCollection;
+	private HashMap<String, ComicCollection> collectionMap;
 	
 	/** Constructor for the ViewModel
 	 * 
@@ -29,6 +33,7 @@ public class Project3ViewModel {
 		this.collectionName = new SimpleStringProperty("");
 		this.collectionList = new SimpleListProperty<ComicCollection>(FXCollections.observableArrayList(new ArrayList<ComicCollection>()));
 		this.selectedCollection = new SimpleObjectProperty<ComicCollection>();
+		this.collectionMap = new HashMap<String, ComicCollection>();
 	}
 	
 	/** Gets the name of the collection to be made
@@ -59,14 +64,22 @@ public class Project3ViewModel {
 	 * 
 	 */
 	public void createCollection() {
-		ComicCollection newCollection = new ComicCollection(this.collectionName.get());
-		this.collectionList.add(newCollection);
+		try {
+			ComicCollection newCollection = new ComicCollection(this.collectionName.get());
+			this.collectionList.add(newCollection);
+			this.collectionMap.put(this.collectionName.get(), newCollection);
+		} catch (IllegalArgumentException error) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setContentText(error.getMessage());
+			alert.showAndWait();
+		}
 	}
 	
 	/** Removes a collection from the list
 	 * 
 	 */
 	public void removeCollection() {
-		this.collectionList.remove(this.selectedCollection);
+		this.collectionList.remove(this.selectedCollection.get());
+		this.collectionMap.remove(this.selectedCollection.getName());
 	}
 }
