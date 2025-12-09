@@ -63,16 +63,10 @@ public class Project3ViewModel {
 	/** Creates a new comic collection
 	 * 
 	 */
-	public void createCollection() {
-		try {
+	public void createCollection() throws IllegalArgumentException {
 			ComicCollection newCollection = new ComicCollection(this.collectionName.get());
 			this.collectionList.add(newCollection);
 			this.collectionMap.put(this.collectionName.get(), newCollection);
-		} catch (IllegalArgumentException error) {
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setContentText(error.getMessage());
-			alert.showAndWait();
-		}
 	}
 	
 	/** Removes a collection from the list

@@ -1,10 +1,12 @@
 package edu.westga.cs1302.comic_collections.views;
 
+import edu.westga.cs1302.comic_collections.Main;
 import edu.westga.cs1302.comic_collections.model.ComicCollection;
 import edu.westga.cs1302.comic_collections.viewmodel.Project3ViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
@@ -21,9 +23,14 @@ public class MainWindow {
     @FXML private TextField collectionName;
     @FXML private Button removeCollectionButton;
     @FXML private MenuItem removeCollectionMenuItem;
+    @FXML private Button newComic;
+    @FXML private ListView<?> comicList;
+    @FXML private Button removeComicButton;
+    @FXML private MenuItem removeComicMenuItem;
     
     private Project3ViewModel vm;
- 
+    private Main main;
+    
     @FXML
     void initialize() {
     	this.vm = new Project3ViewModel();
@@ -47,9 +54,23 @@ public class MainWindow {
     	
     	this.addCollection.disableProperty().bind(this.collectionName.textProperty().isEmpty());
     	
-    	this.removeCollectionButton.setOnAction((event) -> { 
-    		this.vm.removeCollection();
-    	});
+    	this.removeCollectionButton.setOnAction(
+    			(event) -> { 
+    				this.vm.removeCollection();
+    			}
+    	);
+    	
+    	this.removeCollectionMenuItem.setOnAction(
+    			(event) -> {
+    				this.vm.removeCollection();
+    			}
+    	);
+    	
+    	this.newComic.setOnAction(
+    			(event) -> {
+    				Dialog<Comic> comicDialog = new ComicDialog();
+    				Optional<Comic> comicResult = comicDialog.showAndWait();
+    			}
+    	);
     }
-
 }
